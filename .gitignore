@@ -1,0 +1,4 @@
+*.o
+aws-uploader
+deps.make
+subprocess_test

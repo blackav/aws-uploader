@@ -37,11 +37,11 @@ HXXFILES = \
 
 OBJECTS = $(CFILES:.c=.o) $(CXXFILES:.cpp=.o)
 
-all : uploader subprocess_test s3_test
+all : aws-uploader subprocess_test
 
 include deps.make
 
-uploader : uploader.cpp $(OBJECTS)
+aws-uploader : aws-uploader.cpp $(OBJECTS)
 	$(CXX) $(ALLCXXFLAGS) $^ -o$@ -lcrypto
 
 subprocess_test : subprocess_test.cpp $(OBJECTS)
