@@ -51,7 +51,7 @@ s3_test : s3_test.cpp $(OBJECTS)
 	$(CXX) $(ALLCXXFLAGS) $^ -o$@ -lcrypto
 
 clean :
-	-rm -f uploader *.o
+	-rm -f aws-uploader subprocess_test *.o deps.make
 
 deps.make : $(CFILES) $(HFILES) $(CXXFILES) $(HXXFILES)
 	gcc -MM $(CFILES) $(CXXFILES) > deps.make
