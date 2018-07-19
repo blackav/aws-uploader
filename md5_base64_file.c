@@ -51,7 +51,9 @@ md5_base64_fd_offsets(
     } else {
         char tmpbuf[(MD5_DIGEST_LENGTH + 2) / 3 * 4 + 1];
         base64_encode((char*) digest, sizeof(digest), tmpbuf);
-        snprintf(b64_buf, b64_size, "%s", tmpbuf);
+        if (snprintf(b64_buf, b64_size, "%s", tmpbuf) >= b64_size) {
+	    abort();
+	}
     }
 
     return retval;

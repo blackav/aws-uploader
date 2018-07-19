@@ -150,7 +150,7 @@ Subprocess::run_and_wait()
                     // splice a file descriptor
                     while (1) {
                         off_t diff = input_end - input_beg;
-                        assert((size_t) diff == diff);
+                        assert((off_t) (size_t) diff == diff);
                         size_t wsz = diff;
                         assert((ssize_t) wsz > 0);
                         ssize_t ww = splice(input_fd, &input_beg, in_pipe[1], NULL, wsz, 0);
