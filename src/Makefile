@@ -37,7 +37,7 @@ HXXFILES = \
 
 OBJECTS = $(CFILES:.c=.o) $(CXXFILES:.cpp=.o)
 
-all : aws-uploader subprocess_test
+all : aws-uploader
 
 include deps.make
 
